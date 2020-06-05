@@ -5,7 +5,7 @@ def ipinfo_request(address: str) -> dict:
     url = 'https://ipinfo.io/{}/json'.format(address)
     data = requests.get(url)
     data = data.json()
-    keys = ("org", "city", "country")
+    keys = ("as", "org", "city", "country")
     return {key: data[key] if key in data.keys() else '?' for key in keys}
 
 
@@ -13,7 +13,7 @@ def ip_api_request(address: str) -> dict:
     url = 'http://ip-api.com/json/{}'.format(address)
     data = requests.get(url)
     data = data.json()
-    keys = ("org", "city", "country")
+    keys = ("as", "org", "city", "country")
     return {key: data[key] if (key in data.keys() and data[key]) else '?' for key in keys}
 
 
