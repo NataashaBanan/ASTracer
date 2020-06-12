@@ -10,11 +10,14 @@ def get_output(ip_name):# получили в arr строки выхода
         arr = p.stdout.readlines()
     return arr
 
-try:
-    ip_name = IP.search(input()).group(0)
-except AttributeError:
-    print("bad input")
-    ip_name = "192.168.1.1"
+#try:
+#    ip_name = IP.search(input()).group(0)
+#except AttributeError:
+#    print("bad input")
+#    ip_name = "192.168.1.1"
+
+
+ip_name = input()
 
 arr = parse(get_output(ip_name))
 
